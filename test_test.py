@@ -95,7 +95,7 @@ def detect_anomalies(file_path, model_path, scaler_path, label_encoders_path):
 # Run the anomaly detection
 if __name__ == "__main__":
     # Paths to the necessary files (replace with actual file paths)
-    file_path = "Book1.xlsx"  # The new data file to check
+    file_path = "anomalous_sequence_5.csv"  # The new data file to check
     model_path = "lstm_model.keras"  # Trained LSTM model
     scaler_path = "scaler.pkl"  # The scaler used during training, saved as a pickle file
     label_encoders_path = "label_encoders.pkl"  # Label encoders used during training, saved as a pickle file

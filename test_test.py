@@ -39,7 +39,7 @@ def prepare_features(df, user_encoder, vectorizer):
     # Concatenate all features into a final feature set
     df.reset_index(drop=True, inplace=True)
     X_text_df.reset_index(drop=True, inplace=True)
-    X_final = pd.concat([df.drop(columns=['Activity Description', 'Datetime', 'Reason for change']), X_text_df], axis=1)
+    X_final = pd.concat([df.drop(columns=['Activity Description', 'Datetime', 'Reason for change', 'Anomaly'], errors='ignore'), X_text_df], axis=1)
     
     return X_final
 
@@ -71,4 +71,4 @@ def predict_anomalies(file_path):
     print("Predictions saved to predictions_output.csv.")
 
 if __name__ == "__main__":
-    predict_anomalies('anomalous_sequence.csv')
+    predict_anomalies('combined_output.csv')
